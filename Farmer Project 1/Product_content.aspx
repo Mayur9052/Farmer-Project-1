@@ -123,37 +123,6 @@
                 </div>
                 </div>
         <!-- Close Content -->
-
-
-
-            <%--        <br />
-        <br />
-        
-                Id:
-                <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                <br />
-                name:
-                <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
-                <br />
-                brand:
-                <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>' />
-                <br />
-                price:
-                <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
-                <br />
-                type:
-                <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
-                <br />
-                description:
-                <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
-                <br />
-                image:
-                <asp:Label ID="imageLabel" runat="server" Text='<%# Eval("image") %>' />
-                <br />--%>
-            <br />
-
-            <br />
-            <br />
     </form>
 
 </asp:Content>
