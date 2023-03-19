@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Farmer_Project_1
 {
-    public partial class Detail : System.Web.UI.Page
+    public partial class Blog_details : System.Web.UI.Page
     {
         string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\mayur\source\repos\Farmer Project 1\Farmer Project 1\App_Data\Farmerdb.mdf"";Integrated Security=True";
         SqlConnection connection;
@@ -23,28 +23,31 @@ namespace Farmer_Project_1
             connection.Open();
         }
 
-        public void clear()
-        {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            getConnection();
+            fillgrid();
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        public void fillgrid()
         {
-            if(Button1.Text == "Submit")
+            dataAdapter = new SqlDataAdapter("select * from blog", connection);
+            dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            GridView1.DataSource = dataSet.Tables[0];
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "cmd_delete_blog")
             {
+                int id = Convert.ToInt32(e.CommandArgument);
                 getConnection();
-                command = new SqlCommand("insert into blog(name, email, subject, comment) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "')", connection);
+                command = new SqlCommand("Delete from blog where id = '" + id + "'", connection);
                 command.ExecuteNonQuery();
-                clear();
-                Response.Write("<script>alert('Inserted Successfully')</script>");
+                fillgrid();
+                Response.Write("<script>alert('Deleted..')</script>");
             }
         }
     }

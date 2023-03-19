@@ -23,6 +23,13 @@ namespace Farmer_Project_1
             connection.Open();
         }
 
+        public void TextboxEmpty()
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +43,8 @@ namespace Farmer_Project_1
                 getConnection();
                 command = new SqlCommand("Insert into Contact(name, email, subject, message) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "')", connection);
                 command.ExecuteNonQuery();
+                TextboxEmpty();
+                Response.Write("<script>alert('Inserted Successfully...')</script>");
             }
         }
     }

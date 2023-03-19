@@ -11,7 +11,7 @@ namespace Farmer_Project_1
 {
 
 
-    public partial class Product
+    public partial class Seeds_product
     {
 
         /// <summary>

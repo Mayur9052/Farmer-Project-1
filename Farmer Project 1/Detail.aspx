@@ -150,22 +150,27 @@
                 <!-- Comment Form Start -->
                 <div class="bg-primary p-5">
                     <h2 class="text-white mb-4">Leave a comment</h2>
-                    <form>
+                    <form runat="server" method="post">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;">
+                                <%--<input type="text" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;">--%>
+                                <asp:TextBox ID="TextBox1" runat="server" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;"></asp:TextBox>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;">
+                                <%--<input type="email" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;">--%>
+                                <asp:TextBox ID="TextBox2" runat="server" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;"></asp:TextBox>
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control bg-white border-0" placeholder="Website" style="height: 55px;">
+                                <%--<input type="text" class="form-control bg-white border-0" placeholder="Website" style="height: 55px;">--%>
+                                <asp:TextBox ID="TextBox3" runat="server" class="form-control bg-white border-0" placeholder="Subject" style="height: 55px;"></asp:TextBox>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>
+                                <%--<textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>--%>
+                                <asp:TextBox ID="TextBox4" runat="server" class="form-control bg-white border-0" placeholder="Comment" style="height: 55px;"></asp:TextBox>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-secondary w-100 py-3" type="submit">Leave Your Comment</button>
+                                <%--<button class="btn btn-secondary w-100 py-3" type="submit">Leave Your Comment</button>--%>
+                                <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-secondary w-100 py-3" OnClick="Button1_Click" />
                             </div>
                         </div>
                     </form>

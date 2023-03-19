@@ -9,8 +9,9 @@ using System.Web.UI.WebControls;
 
 namespace Farmer_Project_1
 {
-    public partial class Detail : System.Web.UI.Page
+    public partial class BuyProduct : System.Web.UI.Page
     {
+        private const string V = "Google Pay";
         string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\mayur\source\repos\Farmer Project 1\Farmer Project 1\App_Data\Farmerdb.mdf"";Integrated Security=True";
         SqlConnection connection;
         SqlCommand command;
@@ -23,14 +24,6 @@ namespace Farmer_Project_1
             connection.Open();
         }
 
-        public void clear()
-        {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,13 +31,12 @@ namespace Farmer_Project_1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(Button1.Text == "Submit")
+            if(Button1.Text == "Buy Now")
             {
                 getConnection();
-                command = new SqlCommand("insert into blog(name, email, subject, comment) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "')", connection);
+                command = new SqlCommand("Insert into BuyProduct(name, email, phoneno, address, payment) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + DropDownList1.SelectedValue.ToString() + "')",connection);
                 command.ExecuteNonQuery();
-                clear();
-                Response.Write("<script>alert('Inserted Successfully')</script>");
+                Response.Write("<script>alert('Inserted Successfully...')</script>");
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="Farmer_Project_1.Product" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Grains_product.aspx.cs" Inherits="Farmer_Project_1.Grains_product" %>
 
 <asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
     <form id="form1" runat="server">
@@ -21,10 +21,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="d-flex align-items-center justify-content-end">
-                            <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a><a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a><a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a><a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +31,7 @@
 
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-                <a href="Index.aspx" class="navbar-brand d-flex d-lg-none">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none">
                     <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -42,25 +39,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="Index.aspx" class="nav-item nav-link">Home</a>
-                        <a href="About.aspx" class="nav-item nav-link">About</a>
-                        <a href="Service.aspx" class="nav-item nav-link">Service</a>
-                        <a href="Product.aspx" class="nav-item nav-link active">Product</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a> <a href="about.html" class="nav-item nav-link">About</a> <a href="service.html" class="nav-item nav-link">Service</a> <a href="product.html" class="nav-item nav-link">Product</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="Blog.aspx" class="dropdown-item">Blog Grid</a>
-                                <a href="Detail.aspx" class="dropdown-item">Blog Detail</a>
-                                <a href="Feature.aspx" class="dropdown-item">Features</a>
-                                <a href="Team.aspx" class="dropdown-item">The Team</a>
-                                <a href="Testimonial.aspx" class="dropdown-item active">Testimonial</a>
+                                <a href="blog.html" class="dropdown-item">Blog Grid</a> <a href="detail.html" class="dropdown-item">Blog Detail</a> <a href="feature.html" class="dropdown-item">Features</a> <a href="team.html" class="dropdown-item">The Team</a> <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="Contact.aspx" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
+
 
 
             <!-- Hero Start -->
@@ -89,26 +80,30 @@
                             <div class="row g-0">
 
                                 <div class="col-10">
-                                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal">
+                                    <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource2">
                                         <ItemTemplate>
-                                        <a href="Product_content.aspx?name=<%# Eval("name") %>">
-                                            <div class="position-relative m-4">
+                                            <a href="Product_content.aspx?name=<%# Eval("name") %>">
+                                                <div class="position-relative m-4">
 
-                                                <%--<img class="img-fluid w-100" src="img/team-1.jpg" alt="">--%>
-                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="250" Height="250" />
-                                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                                    <%--<h4 class="text-white">Farmer Name</h4>--%>
-                                                    <h4 class="text-white">
-                                                        <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></h4>
-                                                    <%--<span class="text-white">Designation</span>--%>
-                                                    <span class="text-white">
-                                                        <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></span>
+                                                    <%--<img class="img-fluid w-100" src="img/team-1.jpg" alt="">--%>
+                                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="250" Height="250" />
+                                                    <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
+                                                        <%--<h4 class="text-white">Farmer Name</h4>--%>
+                                                        <h4 class="text-white">
+                                                            <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></h4>
+                                                        <%--<span class="text-white">Designation</span>--%>
+                                                        <span class="text-white">
+                                                            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></span>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </a>
                                         </ItemTemplate>
                                     </asp:DataList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [name], [price], [image] FROM [Add_product]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [name], [price], [image] FROM [Add_product] WHERE ([type] = @type)">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="Grains" Name="type" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
 
 
                                     <%--  name:
@@ -128,9 +123,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Team End -->
-
-
             <!-- Features Start -->
             <div class="container-fluid bg-primary feature py-5 pb-lg-0 mt-5" style="margin-bottom: 135px;">
                 <div class="container py-5 pb-lg-0">
@@ -182,5 +174,6 @@
             </div>
             <!-- Features Start -->
     </form>
+
 </asp:Content>
 

@@ -9,14 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace Farmer_Project_1
 {
-    public partial class Team : System.Web.UI.Page
+    public partial class Add_product : System.Web.UI.Page
     {
         string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\mayur\source\repos\Farmer Project 1\Farmer Project 1\App_Data\Farmerdb.mdf"";Integrated Security=True";
         SqlConnection connection;
         SqlCommand command;
         SqlDataAdapter dataAdapter;
         DataSet dataSet;
-        string gender;
 
         public void getConnection()
         {
@@ -24,42 +23,33 @@ namespace Farmer_Project_1
             connection.Open();
         }
 
-        public void Team_Image()
+        public void upload()
         {
-            FileUpload1.SaveAs(Server.MapPath("~/Team_Images/" + FileUpload1.FileName));
+            FileUpload1.SaveAs(Server.MapPath("~/Product_image/" + FileUpload1.FileName));
         }
-
-        public void Team_Gender()
+        public void TextboxEmpty()
         {
-            if(RadioButtonList1.Text == "Male")
-            {
-                gender = "Male";
-            }
-            else if (RadioButtonList1.Text == "Female")
-            {
-                gender = "Female";
-            }
-            else
-            {
-                gender = "Others";
-            }
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox5.Text = "";
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            getConnection();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(Button1.Text == "Create")
+            if (Button1.Text == "Add")
             {
                 getConnection();
-                Team_Image();
-                Team_Gender();
-
-                command = new SqlCommand("Insert into Team(firstname, lastname, gender, email, designation, description, userimage) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + gender + "', '" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "', '" + "~/Team_Images/" + FileUpload1.FileName + "')", connection);
+                upload();
+                command = new SqlCommand("Insert into Add_product(name, brand, price, type, description, image) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "', '"+DropDownList1.SelectedValue.ToString()+"','" + TextBox5.Text + "', '"+"~/Product_image/"+FileUpload1.FileName +"')", connection);
                 command.ExecuteNonQuery();
+                TextboxEmpty();
+                Response.Write("<script>alert('Inserted Successfully...')</script>");
             }
         }
     }
