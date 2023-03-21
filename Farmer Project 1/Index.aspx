@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Farmer_Project_1.Index" %>
 
-<asp:Content ID="Content1" runat="server" contentplaceholderid="ContentPlaceHolder2">
+
+
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
     <body>
-    <!-- Topbar Start -->
+        <!-- Topbar Start -->
         <div class="container-fluid px-5 d-none d-lg-block">
             <div class="row gx-5 py-3 align-items-center">
                 <div class="col-lg-3">
@@ -14,7 +17,7 @@
                 <div class="col-lg-6">
                     <div class="d-flex align-items-center justify-content-center">
                         <a href="index.html" class="navbar-brand ms-lg-5">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Farm</span>Fresh</h1>
+                            <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Farm</span>Fresh</h1>
                         </a>
                     </div>
                 </div>
@@ -25,46 +28,49 @@
                 </div>
             </div>
         </div>
-    <!-- Topbar End -->
+        <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
+        <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-            <a href="Index.aspx" class="navbar-brand d-flex d-lg-none">
-            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+            <a href="index.html" class="navbar-brand d-flex d-lg-none">
+                <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
-                <a href="Index.aspx" class="nav-item nav-link active">Home</a>
-                <a href="About.aspx" class="nav-item nav-link">About</a>
-                <a href="Service.aspx" class="nav-item nav-link">Service</a>
-                <a href="Product.aspx" class="nav-item nav-link">Product</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="Blog.aspx" class="dropdown-item">Blog Grid</a>
-                        <a href="Detail.aspx" class="dropdown-item">Blog Detail</a>
-                        <a href="Feature.aspx" class="dropdown-item">Features</a>
-                        <a href="Team.aspx" class="dropdown-item">The Team</a>
-                        <a href="Testimonial.aspx" class="dropdown-item">Testimonial</a>
+                    <a href="Index.aspx" class="nav-item nav-link active">Home</a>
+                    <a href="About.aspx" class="nav-item nav-link">About</a>
+                    <a href="Service.aspx" class="nav-item nav-link">Service</a>
+                    <a href="Product.aspx" class="nav-item nav-link">Product</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Blog.aspx" class="dropdown-item">Blog Grid</a>
+                            <a href="Detail.aspx" class="dropdown-item">Blog Detail</a>
+                            <a href="Feature.aspx" class="dropdown-item">Features</a>
+                            <a href="Team.aspx" class="dropdown-item active">The Team</a>
+                            <a href="Testimonial.aspx" class="dropdown-item">Testimonial</a>
+                        </div>
                     </div>
+                    <a href="Contact.aspx" class="nav-item nav-link">Contact</a>
+                    <form method="post" runat="server">
+                        <asp:Button ID="Button1" runat="server" class="nav-item nav-link bg-transparent border-0" Text="Logout" OnClick="Button1_Click" />
+                    </form>
                 </div>
-                <a href="Contact.aspx" class="nav-item nav-link">Contact</a>
-            </div>
             </div>
         </nav>
-    <!-- Navbar End -->
+        <!-- Navbar End -->
 
 
-    <!-- Carousel Start -->
+        <!-- Carousel Start -->
         <div class="container-fluid p-0">
             <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                        <img class="w-100 h-50" src="img/carousel-1.jpg" alt="Image">
                         <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
                             <div class="text-start p-5" style="max-width: 900px;">
                                 <h3 class="text-white">Organic Vegetables</h3>
@@ -74,7 +80,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                        <img class="w-100 h-50" src="img/carousel-2.jpg" alt="Image">
                         <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
                             <div class="text-start p-5" style="max-width: 900px;">
                                 <h3 class="text-white">Organic Fruits</h3>
@@ -85,19 +91,19 @@
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
-    <!-- Carousel End -->
+        <!-- Carousel End -->
 
 
-    <!-- Banner Start -->
+        <!-- Banner Start -->
         <div class="container-fluid banner mb-5">
             <div class="container">
                 <div class="row gx-0">
@@ -105,7 +111,8 @@
                         <div class="bg-primary bg-vegetable d-flex flex-column justify-content-center p-5" style="height: 300px;">
                             <h3 class="text-white mb-3">Organic Vegetables</h3>
                             <p class="text-white">
-                                Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam</p>
+                                Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam
+                            </p>
                             <a class="text-white fw-bold" href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
@@ -113,17 +120,18 @@
                         <div class="bg-secondary bg-fruit d-flex flex-column justify-content-center p-5" style="height: 300px;">
                             <h3 class="text-white mb-3">Organic Fruits</h3>
                             <p class="text-white">
-                                Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam</p>
+                                Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam
+                            </p>
                             <a class="text-white fw-bold" href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Banner Start -->
+        <!-- Banner Start -->
 
 
-    <!-- About Start -->
+        <!-- About Start -->
         <div class="container-fluid about pt-5">
             <div class="container">
                 <div class="row gx-5">
@@ -138,29 +146,32 @@
                             <h1 class="display-5">We Produce Organic Food For Your Family</h1>
                         </div>
                         <p class="mb-4">
-                            Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet magna</p>
+                            Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet magna
+                        </p>
                         <div class="row gx-5 gy-4">
                             <div class="col-sm-6">
                                 <i class="fa fa-seedling display-1 text-secondary"></i>
                                 <h4>100% Organic</h4>
                                 <p class="mb-0">
-                                    Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                    Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                                </p>
                             </div>
                             <div class="col-sm-6">
                                 <i class="fa fa-award display-1 text-secondary"></i>
                                 <h4>Award Winning</h4>
                                 <p class="mb-0">
-                                    Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                    Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- About End -->
+        <!-- About End -->
 
 
-    <!-- Facts Start -->
+        <!-- Facts Start -->
         <div class="container-fluid bg-primary facts py-5 mb-5">
             <div class="container py-5">
                 <div class="row gx-5 gy-4">
@@ -211,10 +222,10 @@
                 </div>
             </div>
         </div>
-    <!-- Facts End -->
-    
+        <!-- Facts End -->
 
-    <!-- Services Start -->
+
+        <!-- Services Start -->
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="row g-5">
@@ -224,7 +235,8 @@
                             <h1 class="display-5">Organic Farm Services</h1>
                         </div>
                         <p class="mb-4">
-                            Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit sed stet labore</p>
+                            Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit sed stet labore
+                        </p>
                         <a href="" class="btn btn-primary py-md-3 px-md-5">Contact Us</a>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -232,7 +244,8 @@
                             <i class="fa fa-carrot display-1 text-primary mb-3"></i>
                             <h4>Fresh Vegetables</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -240,7 +253,8 @@
                             <i class="fa fa-apple-alt display-1 text-primary mb-3"></i>
                             <h4>Fresh Fruits</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -248,7 +262,8 @@
                             <i class="fa fa-dog display-1 text-primary mb-3"></i>
                             <h4>Healty Cattle</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -256,7 +271,8 @@
                             <i class="fa fa-tractor display-1 text-primary mb-3"></i>
                             <h4>Modern Truck</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -264,16 +280,17 @@
                             <i class="fa fa-seedling display-1 text-primary mb-3"></i>
                             <h4>Farming Plans</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Services End -->
+        <!-- Services End -->
 
 
-    <!-- Features Start -->
+        <!-- Features Start -->
         <div class="container-fluid bg-primary feature py-5 pb-lg-0 my-5">
             <div class="container py-5 pb-lg-0">
                 <div class="mx-auto text-center mb-3 pb-2" style="max-width: 500px;">
@@ -288,7 +305,8 @@
                             </div>
                             <h4 class="text-white">100% Organic</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita
+                            </p>
                         </div>
                         <div class="text-white">
                             <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
@@ -296,13 +314,15 @@
                             </div>
                             <h4 class="text-white">Award Winning</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-block bg-white h-100 text-center p-5 pb-lg-0">
                             <p>
-                                At et justo elitr amet sea at. Magna et sit vero at ipsum sit et dolores rebum. Magna sea eos sit dolor, ipsum amet no tempor ipsum eirmod lorem eirmod diam tempor dolor eos diam et et diam dolor ea. Clita est rebum amet dolore sit. Dolor stet dolor duo clita, vero dolor ipsum amet dolore magna lorem erat stet sed vero dolor</p>
+                                At et justo elitr amet sea at. Magna et sit vero at ipsum sit et dolores rebum. Magna sea eos sit dolor, ipsum amet no tempor ipsum eirmod lorem eirmod diam tempor dolor eos diam et et diam dolor ea. Clita est rebum amet dolore sit. Dolor stet dolor duo clita, vero dolor ipsum amet dolore magna lorem erat stet sed vero dolor
+                            </p>
                             <img class="img-fluid" src="img/feature.png" alt="">
                         </div>
                     </div>
@@ -313,7 +333,8 @@
                             </div>
                             <h4 class="text-white">Modern Farming</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita
+                            </p>
                         </div>
                         <div class="text-white">
                             <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
@@ -321,16 +342,17 @@
                             </div>
                             <h4 class="text-white">24/7 Support</h4>
                             <p class="mb-0">
-                                Labore justo vero ipsum sit clita erat lorem magna clita</p>
+                                Labore justo vero ipsum sit clita erat lorem magna clita
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Features Start -->
+        <!-- Features Start -->
 
 
-    <!-- Products Start -->
+        <!-- Products Start -->
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="mx-auto text-center mb-5" style="max-width: 500px;">
@@ -391,10 +413,10 @@
                 </div>
             </div>
         </div>
-    <!-- Products End -->
+        <!-- Products End -->
 
 
-    <!-- Testimonial Start -->
+        <!-- Testimonial Start -->
         <div class="container-fluid bg-testimonial py-5 my-5">
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -403,14 +425,16 @@
                             <div class="testimonial-item text-center text-white">
                                 <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="img/testimonial-2.jpg" alt="">
                                 <p class="fs-5">
-                                    Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                                    Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.
+                                </p>
                                 <hr class="mx-auto w-25">
                                 <h4 class="text-white mb-0">Client Name</h4>
                             </div>
                             <div class="testimonial-item text-center text-white">
                                 <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="img/testimonial-2.jpg" alt="">
                                 <p class="fs-5">
-                                    Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                                    Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.
+                                </p>
                                 <hr class="mx-auto w-25">
                                 <h4 class="text-white mb-0">Client Name</h4>
                             </div>
@@ -419,10 +443,10 @@
                 </div>
             </div>
         </div>
-    <!-- Testimonial End -->
+        <!-- Testimonial End -->
 
 
-    <!-- Team Start -->
+        <!-- Team Start -->
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="mx-auto text-center mb-5" style="max-width: 500px;">
@@ -487,10 +511,10 @@
                 </div>
             </div>
         </div>
-    <!-- Team End -->
+        <!-- Team End -->
 
 
-    <!-- Blog Start -->
+        <!-- Blog Start -->
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="mx-auto text-center mb-5" style="max-width: 500px;">
@@ -500,31 +524,35 @@
                 <div class="row g-5">
                     <div class="col-lg-4">
                         <div class="blog-item position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt=""> <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span> </a>
+                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                            <a class="blog-overlay" href="">
+                                <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
+                                <span class="text-white fw-bold">Jan 01, 2050</span> </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="blog-item position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt=""> <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span> </a>
+                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                            <a class="blog-overlay" href="">
+                                <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
+                                <span class="text-white fw-bold">Jan 01, 2050</span> </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="blog-item position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt=""> <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span> </a>
+                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
+                            <a class="blog-overlay" href="">
+                                <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
+                                <span class="text-white fw-bold">Jan 01, 2050</span> </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Blog End -->
-    
+        <!-- Blog End -->
+</asp:Content>
 
-            </asp:Content>
+
+
 
 

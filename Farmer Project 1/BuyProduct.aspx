@@ -43,6 +43,15 @@
                 <a href="About.aspx" class="nav-item nav-link">About</a>
                 <a href="Service.aspx" class="nav-item nav-link">Service</a>
                 <a href="Product.aspx" class="nav-item nav-link active">Product</a>
+                 <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Seeds_product.aspx" class="dropdown-item">Seeds</a>
+                        <a href="Grains_product.aspx" class="dropdown-item">Grains</a>
+                        <a href="Machinery_product.aspx" class="dropdown-item">Machinery</a>
+                        <a href="Pesticides.aspx" class="dropdown-item">Pesticides</a>
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -50,7 +59,7 @@
                         <a href="Detail.aspx" class="dropdown-item">Blog Detail</a>
                         <a href="Feature.aspx" class="dropdown-item">Features</a>
                         <a href="Team.aspx" class="dropdown-item">The Team</a>
-                        <a href="Testimonial.aspx" class="dropdown-item active">Testimonial</a>
+                        <a href="Testimonial.aspx" class="dropdown-item ">Testimonial</a>
                     </div>
                 </div>
                 <a href="Contact.aspx" class="nav-item nav-link">Contact</a>
@@ -60,7 +69,7 @@
     <!-- Navbar End -->
 
 
-         <div class="col-lg-7 m-5">
+         <div class="col-lg-7 m-5 ">
                     <div class="bg-primary h-100 p-5" style="position: relative;left: 35%;">
                         <form id="form1" runat="server">
                             <div class="row g-3">
@@ -81,8 +90,8 @@
                                     <asp:TextBox ID="TextBox4" runat="server" class="form-control bg-light border-0 px-4 py-3" rows="2" placeholder="Your Address"></asp:TextBox>
                                 </div>
                                 <div class="col-6">
-                                    <asp:Label runat="server" class="text-white m-3" Text="Payment Order:"></asp:Label>
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:Label runat="server" class="text-white" Text="Payment Order:"></asp:Label>
+                                    <asp:DropDownList ID="DropDownList1" runat="server" class="form-control p-3 mt-2">
                                         <asp:ListItem>Google Pay</asp:ListItem>
                                         <asp:ListItem>Pay pal</asp:ListItem>
                                         <asp:ListItem>Others</asp:ListItem>

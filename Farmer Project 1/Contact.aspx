@@ -45,6 +45,15 @@
                 <a href="About.aspx" class="nav-item nav-link">About</a>
                 <a href="Service.aspx" class="nav-item nav-link">Service</a>
                 <a href="Product.aspx" class="nav-item nav-link">Product</a>
+                 <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Seeds_product.aspx" class="dropdown-item">Seeds</a>
+                        <a href="Grains_product.aspx" class="dropdown-item">Grains</a>
+                        <a href="Machinery_product.aspx" class="dropdown-item">Machinery</a>
+                        <a href="Pesticides.aspx" class="dropdown-item">Pesticides</a>
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -87,7 +96,7 @@
             <div class="row g-0">
                 <div class="col-lg-7">
                     <div class="bg-primary h-100 p-5">
-                        <form runat="server" method="post" action="Contact.aspx"> 
+                        <form runat="server" method="post" action=""> 
                             <div class="row g-3">
                                 <div class="col-6">
                                     <%--<input type="text" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">--%>

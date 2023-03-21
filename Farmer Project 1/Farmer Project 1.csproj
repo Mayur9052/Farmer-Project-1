@@ -69,17 +69,22 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Add_product.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="AdminSignup.aspx" />
     <Content Include="App_Data\Farmerdb.mdf" />
     <Content Include="App_Data\Farmerdb_log.ldf">
       <DependentUpon>Farmerdb.mdf</DependentUpon>
     </Content>
     <Content Include="Blog.aspx" />
     <Content Include="Blog_details.aspx" />
+    <Content Include="Blog_update.aspx" />
     <Content Include="BuyProduct.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Contact_details.aspx" />
+    <Content Include="Contact_update.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Detail.aspx" />
     <Content Include="Feature.aspx" />
     <Content Include="Grains_product.aspx" />
@@ -94,6 +99,9 @@
     <Content Include="img\feature.png" />
     <Content Include="img\footer.png" />
     <Content Include="img\fruit.png" />
+    <Content Include="img\g5.jpg" />
+    <Content Include="img\h1.jpg" />
+    <Content Include="img\h8.jpg" />
     <Content Include="img\product-1.png" />
     <Content Include="img\product-2.png" />
     <Content Include="img\team-1.jpg" />
@@ -126,11 +134,15 @@
     <Content Include="Product.aspx" />
     <Content Include="Product_content.aspx" />
     <Content Include="Product_details.aspx" />
+    <Content Include="Product_update.aspx" />
     <Content Include="Seeds_product.aspx" />
     <Content Include="Service.aspx" />
     <Content Include="Team.aspx" />
     <Content Include="Team_details.aspx" />
+    <Content Include="Team_update.aspx" />
     <Content Include="Testimonial.aspx" />
+    <Content Include="UserLogin.aspx" />
+    <Content Include="UserSignup.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +160,20 @@
     <Compile Include="Add_product.aspx.designer.cs">
       <DependentUpon>Add_product.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSignup.aspx.cs">
+      <DependentUpon>AdminSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSignup.aspx.designer.cs">
+      <DependentUpon>AdminSignup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blog.aspx.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +187,13 @@
     </Compile>
     <Compile Include="Blog_details.aspx.designer.cs">
       <DependentUpon>Blog_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog_update.aspx.cs">
+      <DependentUpon>Blog_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog_update.aspx.designer.cs">
+      <DependentUpon>Blog_update.aspx</DependentUpon>
     </Compile>
     <Compile Include="BuyProduct.aspx.cs">
       <DependentUpon>BuyProduct.aspx</DependentUpon>
@@ -182,6 +215,20 @@
     </Compile>
     <Compile Include="Contact_details.aspx.designer.cs">
       <DependentUpon>Contact_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_update.aspx.cs">
+      <DependentUpon>Contact_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact_update.aspx.designer.cs">
+      <DependentUpon>Contact_update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
@@ -253,6 +300,13 @@
     <Compile Include="Product_details.aspx.designer.cs">
       <DependentUpon>Product_details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Product_update.aspx.cs">
+      <DependentUpon>Product_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_update.aspx.designer.cs">
+      <DependentUpon>Product_update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seeds_product.aspx.cs">
       <DependentUpon>Seeds_product.aspx</DependentUpon>
@@ -282,12 +336,33 @@
     <Compile Include="Team_details.aspx.designer.cs">
       <DependentUpon>Team_details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Team_update.aspx.cs">
+      <DependentUpon>Team_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Team_update.aspx.designer.cs">
+      <DependentUpon>Team_update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Testimonial.aspx.cs">
       <DependentUpon>Testimonial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Testimonial.aspx.designer.cs">
       <DependentUpon>Testimonial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserSignup.aspx.cs">
+      <DependentUpon>UserSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserSignup.aspx.designer.cs">
+      <DependentUpon>UserSignup.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

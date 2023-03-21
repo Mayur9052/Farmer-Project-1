@@ -46,6 +46,15 @@
                         <a href="About.aspx" class="nav-item nav-link">About</a>
                         <a href="Service.aspx" class="nav-item nav-link">Service</a>
                         <a href="Product.aspx" class="nav-item nav-link active">Product</a>
+                         <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Seeds_product.aspx" class="dropdown-item">Seeds</a>
+                        <a href="Grains_product.aspx" class="dropdown-item">Grains</a>
+                        <a href="Machinery_product.aspx" class="dropdown-item">Machinery</a>
+                        <a href="Pesticides.aspx" class="dropdown-item">Pesticides</a>
+                    </div>
+                </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -53,7 +62,7 @@
                                 <a href="Detail.aspx" class="dropdown-item">Blog Detail</a>
                                 <a href="Feature.aspx" class="dropdown-item">Features</a>
                                 <a href="Team.aspx" class="dropdown-item">The Team</a>
-                                <a href="Testimonial.aspx" class="dropdown-item active">Testimonial</a>
+                                <a href="Testimonial.aspx" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
                         <a href="Contact.aspx" class="nav-item nav-link">Contact</a>

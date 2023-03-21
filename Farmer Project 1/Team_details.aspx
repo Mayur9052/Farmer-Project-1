@@ -2,63 +2,48 @@
 <asp:Content ID="Content4" runat="server" contentplaceholderid="ContentPlaceHolder2">
     <form id="form1" runat="server">
     <body>
-    <!-- Topbar Start -->
-        <div class="container-fluid px-5 d-none d-lg-block">
-            <div class="row gx-5 py-3 align-items-center">
-                <div class="col-lg-3">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
-                        <h2 class="mb-0">+012 345 6789</h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <a href="index.html" class="navbar-brand ms-lg-5">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Farm</span>Fresh</h1>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="d-flex align-items-center justify-content-end">
-                        <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a><a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a><a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a><a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- Topbar End -->
-
 
     <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-            <a href="index.html" class="navbar-brand d-flex d-lg-none">
+        
+    <!-- Navbar Start -->
+           <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none">
             <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a> <a href="about.html" class="nav-item nav-link">About</a> <a href="service.html" class="nav-item nav-link">Service</a> <a href="product.html" class="nav-item nav-link">Product</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                    <a href="Index.aspx" class="nav-item nav-link">Home</a>
+                    <%--<a href="About.aspx" class="nav-item nav-link">About</a>--%>
+                        <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a> <a href="detail.html" class="dropdown-item">Blog Detail</a> <a href="feature.html" class="dropdown-item">Features</a> <a href="team.html" class="dropdown-item">The Team</a> <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="Add_product.aspx" class="dropdown-item">Add Products</a>
+                            <a href="Product_details.aspx" class="dropdown-item">Products Details</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <br />
-                    <br />
-                    <br />
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Team</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Team.aspx" class="dropdown-item">Add Team</a>
+                        <a href="Team_details.aspx" class="dropdown-item">Team Detail</a>
+                    </div>
+                    </div>
+                
+                    <a href="Blog_details.aspx" class="nav-item nav-link">Blog</a>
+                    <a href="Contact_details.aspx" class="nav-item nav-link">Contact</a
                 </div>
-            </div>
-        </nav>
-    <!-- Navbar End -->
+        </div>
+    </nav>
+    <!-- Navbar End --> -->
 
 
 
             <br />
-        <br />
-        <div style="margin-left: 120px">
+        <br /><div class="" style="margin:100px 200px;margin-bottom: 150px;">
+            <h1 class="mx-5 mt-3">Team Details</h1>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
@@ -95,6 +80,12 @@
                     <asp:TemplateField HeaderText="User Image">
                         <ItemTemplate>
                             <asp:Image ID="Image1" Width="220" Height="150" runat="server" ImageUrl='<%# Eval("userImage") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Update">
+                        <ItemTemplate>
+                            <%--<asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%# Eval("id") %>' CommandName="cmd_update_team">update</asp:LinkButton>--%>
+                            <a href="Team_update.aspx?Id=<%# Eval("id") %>">Update</a>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Delete">

@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Farmer_Project_1
+{
+    public partial class AdminSignup : System.Web.UI.Page
+    {
+        string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\mayur\source\repos\Farmer Project 1\Farmer Project 1\App_Data\Farmerdb.mdf"";Integrated Security=True";
+        SqlConnection connection;
+        SqlCommand command;
+        SqlDataAdapter dataAdapter;
+        DataSet dataSet;
+
+        public void getConnection()
+        {
+            connection = new SqlConnection(connection_string);
+            connection.Open();
+        }
+
+        public void TextboxEmpty()
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            getConnection();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (Button1.Text == "SignUp")
+            {
+                getConnection();
+                command = new SqlCommand("Insert into admin(username, password) values('" + TextBox1.Text + "','" + TextBox2.Text + "')", connection);
+                command.ExecuteNonQuery();
+                TextboxEmpty();
+                //Response.Write("<script>alert('Inserted Successfully...')</script>");
+                Response.Redirect("AdminLogin.aspx");
+            }
+        }
+    }
+}

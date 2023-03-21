@@ -24,6 +24,16 @@ namespace Farmer_Project_1
             connection.Open();
         }
 
+        public void clear()
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            gender = "";
+        }
+
         public void Team_Image()
         {
             FileUpload1.SaveAs(Server.MapPath("~/Team_Images/" + FileUpload1.FileName));
@@ -60,6 +70,8 @@ namespace Farmer_Project_1
 
                 command = new SqlCommand("Insert into Team(firstname, lastname, gender, email, designation, description, userimage) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + gender + "', '" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "', '" + "~/Team_Images/" + FileUpload1.FileName + "')", connection);
                 command.ExecuteNonQuery();
+                clear();
+                Response.Write("<script>alert('Inserted...')</script>");
             }
         }
     }
